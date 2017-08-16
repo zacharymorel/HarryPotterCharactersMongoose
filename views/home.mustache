@@ -5,6 +5,16 @@
     <title>Home Harry Potter character Render Page of all characters</title>
   </head>
   <body>
-    <p>Hello World!</p>
+    <h1>This is Harry Potter Character List</h1>
+    <a href="/createCharacter">Create a New Character Here</a>
+    <ul>
+      {{#characters}}
+      <li>
+            <p>Name:{{name}}</p>
+            <p>House:{{house}}</p>
+            <a href="/characterProfile/{{_id}}">Personal Page</a>
+      </li>
+      {{/characters}}
+    </ul>
   </body>
 </html>
