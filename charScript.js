@@ -33,6 +33,16 @@ const Character = require('./CharacterSchema')
 //   .catch(err => {
 //     console.log(err)
 //   })
+
+// Update
+// Character.updateOne({ name: 'Draco' }, { yearBorn: 1980 })
+//   .then(doc => {
+//     console.log(doc)
+//   })
+//   .catch(err => {
+//     console.log(err)
+//   })
+
 // delete records
 // Character.deleteOne({ name: 'Biggles' }).then(() => {
 //   Character.find({})
