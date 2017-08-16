@@ -25,14 +25,30 @@
       <form class="delete" action="/characterProfile/{{_id}}/delete" method="post">
         <button type="submit">Delete!</button>
       </form>
-      <form class="updateOne" action="/characterProfile/{{_id}}/update" method="post">
-        <p>Name:</p><input type="text" name="name" placeholder="Name">
-        <p>House:</p><input type="text" name="house" placeholder="House">
-        <p>Year of Birth:</p><input type="text" name="yearBorn" placeholder="Date of Birth">
-        <p>Hair:</p><input type="text" name="facialCharacteristics[hair]" placeholder="facial">
-        <p>Eye Color:</p><input type="text" name="facialCharacteristics[eyeColor]" placeholder="facial">
-        <p>Unique Characteristics:</p><input type="text" name="facialCharacteristics[unique]" placeholder="facial">
-        <button type="submit">Update!</button>
+      <form class="" action="/characterProfile/{{id}}/update" method="post">
+        <p>name:</p>
+        <input type="text" name="name" value="{{name}}">
+        <p>Hogwarts house</p>
+        <input type="text" name="house" value="{{house}}" >
+        <p>Year they were born</p>
+        <input type="text" name="yearBorn" value="{{yearBorn}}">
+        {{#facialCharacteristics}}
+          <p>Hair Color</p>
+          <input type="text" name="facialCharacteristics[hair]"   value="{{hair}}">
+          <p >Eye Color</p>
+          <input type="text" name="facialCharacteristics[eyeColor]"   value="{{eyeColor}}">
+          <p>Anything extra on their face?</p>
+          <input type="text" name="facialCharacteristics[unique]"   value="{{unique}}">
+        {{/facialCharacteristics}}
+        {{^facialCharacteristics}}
+          <p>Hair Color</p>
+          <input type="text" name="facialCharacteristics[hair]"   placeholder="Hair Color">
+          <p>Eye Color</p>
+          <input type="text" name="facialCharacteristics[eyeColor]"   placeholder="Eye Color">
+          <p>Anything extra on their face?</p>
+          <input type="text" name="facialCharacteristics[unique]"   placeholder="Anything Interesting about them?">
+        {{/facialCharacteristics}}
+          <button type="submit">Update {{name}}!</button>
       </form>
     {{/character}}
   </body>

@@ -69,9 +69,13 @@ app.post('/characterProfile/:id/delete', (request, response) => {
 // UPDATE
 app.post('/characterProfile/:id/update', (request, response) => {
   const id = request.params.id
-  Character.updateOne({ _id: ObjectId(id) }).then(character => {
-    response.render('character', { character })
-  })
+  Character.updateOne({ _id: ObjectId(id) }, request.body)
+    .then(character => {
+      response.redirect('/')
+    })
+    .catch(err => {
+      console.log(err)
+    })
 })
 app.listen(3000, () => {
   console.log('Were listening on 3000')
