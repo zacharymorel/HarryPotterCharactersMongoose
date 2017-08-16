@@ -14,3 +14,11 @@ app.use(express.static('public'))
 app.engine('mustache', mustacheExpress())
 app.set('views', './views')
 app.set('view engine', 'mustache')
+
+app.get('/', (request, response) => {
+  response.render('home')
+})
+
+app.listen(3000, () => {
+  console.log('Were listening on 3000')
+})
