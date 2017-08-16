@@ -6,8 +6,10 @@ const harryPotterCharacters = new mongoose.Schema({
   name: { type: String, required: [true, 'I need your name!'], unique: true },
   house: {
     type: String,
-    enum: ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw'],
-    message: 'You must choose one of the 4 Hogwarts houses.'
+    enum: {
+      values: ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw'],
+      message: 'You must choose one of the 4 Hogwarts houses.'
+    }
   },
   yearBorn: { type: Number, required: true },
   facialCharacteristics: [

@@ -15,5 +15,8 @@
       <p>Unique Characteristics:</p><input type="text" name="facialCharacteristics[unique]" placeholder="facial">
       <button type="submit">Click!</button>
     </form>
+    {{#err}}
+      {{message}}
+    {{/err}}
   </body>
 </html>

@@ -40,7 +40,7 @@ app.post('/creatingCharacter', (request, response) => {
       response.render('home')
     })
     .catch(err => {
-      console.log(err)
+      response.render('createCharacter', { err })
     })
 })
 
