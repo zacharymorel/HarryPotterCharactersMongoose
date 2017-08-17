@@ -21,6 +21,16 @@ const harryPotterCharacters = new mongoose.Schema({
   ]
 })
 
+harryPotterCharacters
+  .virtual('age')
+  .get(function() {
+    // console.log('inside get', new Date().getFullYear(), this, this.yearBorn)
+    return new Date().getFullYear() - this.yearBorn
+  })
+  .set(function(val) {
+    this.yearBorn = new Date().getFullYear() - val
+  })
+
 const Character = mongoose.model('Character', harryPotterCharacters)
 
 module.exports = Character

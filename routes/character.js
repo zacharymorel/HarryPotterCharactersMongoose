@@ -1,8 +1,5 @@
-const mongoose = require('mongoose')
 const Character = require('../models/CharacterSchema')
 const ObjectId = require('mongodb').ObjectId
-
-mongoose.promise = global.promise
 
 module.exports = app => {
   // READ
@@ -38,6 +35,7 @@ module.exports = app => {
     const id = request.params.id
     Character.findOne({ _id: ObjectId(id) })
       .then(character => {
+        console.log('GET', character, character.age)
         response.render('character', { character })
       })
       .catch(err => {
@@ -62,7 +60,7 @@ module.exports = app => {
     const id = request.params.id
     Character.deleteOne({ _id: ObjectId(id) })
       .then(character => {
-        response.render('home')
+        response.redirect('/')
       })
       .catch(err => {
         console.log(err)
