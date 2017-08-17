@@ -1,14 +1,11 @@
 const express = require('express')
 const mustacheExpress = require('mustache-express')
 const mongoose = require('mongoose')
-const ObjectId = require('mongodb').ObjectId
 const bodyParser = require('body-parser')
 const app = express()
 
 mongoose.connect('mongodb://localhost:27017/HarryPotterCharactersDB')
 mongoose.promise = global.promise
-
-const Character = require('./CharacterSchema')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())

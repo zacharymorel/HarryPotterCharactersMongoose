@@ -7,7 +7,7 @@ const harryPotterCharacters = new mongoose.Schema({
   house: {
     type: String,
     enum: {
-      values: ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw'],
+      values: ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw', ''],
       message: 'You must choose one of the 4 Hogwarts houses.'
     }
   },
