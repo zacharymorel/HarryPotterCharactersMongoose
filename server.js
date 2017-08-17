@@ -16,6 +16,7 @@ app.set('views', './views')
 app.set('view engine', 'mustache')
 
 require('./routes/character')(app)
+require('./routes/house')(app)
 
 app.listen(3000, () => {
   console.log('Were listening on 3000')

@@ -24,12 +24,18 @@ const harryPotterCharacters = new mongoose.Schema({
 harryPotterCharacters
   .virtual('age')
   .get(function() {
-    // console.log('inside get', new Date().getFullYear(), this, this.yearBorn)
     return new Date().getFullYear() - this.yearBorn
   })
   .set(function(val) {
     this.yearBorn = new Date().getFullYear() - val
   })
+
+// wrtie Instacnce method to sort people in to house if they have no house
+harryPotterCharacters.methods.addHarryPotterCharacter = function(callback) {
+  return this.model('character').find({
+    house: ''
+  })
+}
 
 const Character = mongoose.model('Character', harryPotterCharacters)
 

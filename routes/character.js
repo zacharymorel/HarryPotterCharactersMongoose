@@ -35,7 +35,7 @@ module.exports = app => {
     const id = request.params.id
     Character.findOne({ _id: ObjectId(id) })
       .then(character => {
-        console.log('GET', character, character.age)
+        // console.log('GET', character, character.age)
         response.render('character', { character })
       })
       .catch(err => {
