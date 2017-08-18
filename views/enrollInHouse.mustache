@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Enrolling Characters</title>
+  </head>
+  <body>
+    <h2>Students to be Enrolled Here:</h2>
+    <ul>
+      {{#characters}}
+      <li>
+            <p>Name:{{name}}</p>
+            <a href="/characterProfile/{{_id}}">Personal Page</a>
+      </li>
+      <form class="enroll" action="/enrollInHouse" method="post">
+        <button type="submit">Enroll</button>
+      </form>
+      {{/characters}}
+    </ul>
+  </body>
+</html>

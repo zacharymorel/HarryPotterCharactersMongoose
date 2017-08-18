@@ -20,7 +20,7 @@ const harryPotterCharacters = new mongoose.Schema({
     }
   ]
 })
-
+// VIRTUAL FEILD
 harryPotterCharacters
   .virtual('age')
   .get(function() {
@@ -31,10 +31,14 @@ harryPotterCharacters
   })
 
 // wrtie Instacnce method to sort people in to house if they have no house
-harryPotterCharacters.methods.addHarryPotterCharacter = function(callback) {
-  return this.model('character').find({
-    house: ''
-  })
+harryPotterCharacters.methods.sortCharacterIntoHouse = function(callback) {
+  return this.model('characters').find(
+    {
+      house: ''
+    },
+    callback
+  )
+  // Math.Random logic Here?
 }
 
 const Character = mongoose.model('Character', harryPotterCharacters)
