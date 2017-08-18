@@ -1,13 +1,15 @@
 // schema goes here
 const mongoose = require('mongoose')
 
+const HOUSES = ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw', '']
+
 //
 const harryPotterCharacters = new mongoose.Schema({
   name: { type: String, required: [true, 'I need your name!'], unique: true },
   house: {
     type: String,
     enum: {
-      values: ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw', ''],
+      values: HOUSES,
       message: 'You must choose one of the 4 Hogwarts houses.'
     }
   },
@@ -30,15 +32,15 @@ harryPotterCharacters
     this.yearBorn = new Date().getFullYear() - val
   })
 
-// wrtie Instacnce method to sort people in to house if they have no house
+// INSTANCE METHOD FOR CHARACTER WHO HAS NO HOUSE
 harryPotterCharacters.methods.sortCharacterIntoHouse = function(callback) {
-  return this.model('characters').find(
-    {
-      house: ''
-    },
-    callback
-  )
-  // Math.Random logic Here?
+  let selectedHouse = undefined
+  while (!selectedHouse) {
+    selectedHouse = HOUSES[Math.floor(Math.random() * HOUSES.length)]
+  }
+  // console.log('selected', selectedHouse, this)
+  this.house = selectedHouse
+  return this.save()
 }
 
 const Character = mongoose.model('Character', harryPotterCharacters)

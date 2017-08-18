@@ -14,8 +14,13 @@ module.exports = app => {
   })
 
   // ENROLL POST IN HOGWARTS CLASS
-  app.post('/enrollInHouse/:id', (request, response))
-  const id = request.params.id
-  Character.updateOne({ _id: ObjectId(id) })
-  // Render math.random logic OR
+  app.post('/enrollInHouse/:id', (request, response) => {
+    const id = request.params.id
+    Character.findOne({ _id: ObjectId(id) }).then(person => {
+      person
+        .sortCharacterIntoHouse()
+        .then(doc => response.redirect('/characterProfile/' + id))
+        .catch(err => response.json(err))
+    })
+  })
 }
