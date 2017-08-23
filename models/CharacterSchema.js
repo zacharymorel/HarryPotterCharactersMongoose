@@ -43,6 +43,11 @@ harryPotterCharacters.methods.sortCharacterIntoHouse = function(callback) {
   return this.save()
 }
 
+// STATIC METHOD GET CHARACTERS WHO HAVE NO HOUSE
+harryPotterCharacters.statics.withoutHouse = function(callback) {
+  return Character.find({ house: '' })
+}
+
 const Character = mongoose.model('Character', harryPotterCharacters)
 
 module.exports = Character
