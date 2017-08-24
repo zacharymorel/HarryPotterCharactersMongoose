@@ -3,26 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Charcter Personal Page</title>
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     {{#character}}
-      <p>Name: {{name}}</p>
-      <p>House: {{house}}</p>
-      <p>Age: {{age}}</p>
-      <p>Year of Birth: {{yearBorn}}</p>
-      <p>Facial Characteristics:</p>
-      <ul>
+      <h1>Name: {{name}}</h1>
+      <h3>House: {{house}}</h3>
+      <h3>Age: {{age}}</h3>
+      <h3>Year of Birth: {{yearBorn}}</h3>
+      <h3>Facial Characteristics:</h3>
         {{#facialCharacteristics}}
-          <li>Hair: {{hair}}</li>
-          <li>Eye Color:{{eyeColor}}</li>
+      <h3>Hair: {{hair}}</h3>
+        <h3>Eye Color:{{eyeColor}}</h3>
           {{#unique}}
-          <li>{{unique}}</li>
+          <h3>{{unique}}</h3>
           {{/unique}}
           {{^unique}}
-            <p></p>
+            <h4></h4>
           {{/unique}}
         {{/facialCharacteristics}}
-      </ul>
       <form class="delete" action="/characterProfile/{{_id}}/delete" method="post">
         <button type="submit">Delete!</button>
       </form>

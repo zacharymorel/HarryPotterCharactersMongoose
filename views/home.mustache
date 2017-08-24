@@ -2,18 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
     <title>Home Harry Potter character Render Page of all characters</title>
   </head>
   <body>
+    <header>
+      <a href="/GRHS/Gryffindor" id="Gryf"><img src="../../img/Gryffindor.jpeg" alt=""></a>
+      <a href="/GRHS/Hufflepuff" id="Huff"><img src="../../img/hufflepuff.jpg" alt=""></a>
+      <a href="/GRHS/Ravenclaw" id="Raven"><img src="../../img/ravenclaw.jpeg" alt=""></a>
+      <a href="/GRHS/Slytherin" id="Sly"><img src="../../img/slytherin.jpg" alt=""></a>
+      <a href="/enrollInHouse/"><img src="../../img/sorting-hat.jpeg" alt=""></a>
+    </header>
+
     <h1>This is Harry Potter Character List</h1>
     <a href="/createCharacter">Create a New Character Here</a>
-    <a href="/enrollInHouse">See Who Needs to Enroll</a>
     <ul>
       {{#characters}}
       <li>
-            <p>Name:{{name}}</p>
-            <p>House:{{house}}</p>
-            <a href="/characterProfile/{{_id}}">Personal Page</a>
+            <h3>Name: {{name}}</h3>
+            <h3>House: {{house}}</h3>
+            <h3><a href="/characterProfile/{{_id}}">Personal Page</a></h3>
       </li>
       {{/characters}}
     </ul>
