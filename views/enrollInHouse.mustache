@@ -10,8 +10,7 @@
     <ul>
       {{#characters}}
       <li>
-            <p>Name:{{name}}</p>
-            <a href="/characterProfile/{{_id}}">Personal Page</a>
+            <h4><a href="/characterProfile/{{_id}}">Name: {{name}}</a></h4>
       </li>
       <form class="enroll" action="/enrollInHouse/{{_id}}" method="post">
         <button type="submit">Enroll</button>

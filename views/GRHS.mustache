@@ -6,11 +6,11 @@
     <title></title>
   </head>
   <body>
-    <a href="/">Main Page</a>
+    <a href="/">Back to Main Page</a>
       <h1>Harry Potter Characters</h1>
       {{#characters}}
       <h3> <a href="/characterProfile/{{_id}}">{{name}}</a></h3>
-      <h4>{{yearBorn}}</h4>
+      <h4>Year Born: {{yearBorn}}</h4>
       {{/characters}}
       <a href="/createCharacter">Add another Harry Potter Character</a>
   </body>

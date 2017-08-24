@@ -24,6 +24,7 @@ module.exports = app => {
     })
   })
 
+  // DISPLAYS SORTED HOUSE CHARACTERS
   app.get('/GRHS/Hufflepuff', (request, response) => {
     Character.find({ house: 'Hufflepuff' })
       .then(characters => {

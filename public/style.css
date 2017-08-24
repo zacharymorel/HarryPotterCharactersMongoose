@@ -22,7 +22,15 @@ header {
 }
 
 h3 {
-  font-size: 1.75em;
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+h5 {
+  font-size: 1.3em;
+  margin: 0;
 }
 
 body > a {
@@ -77,8 +85,8 @@ p {
   margin: 0;
 }
 img {
-  width: 6.5em;
-  height: 6.5em;
+  width: 5em;
+  height: 5em;
   padding-bottom: 0.25em;
   margin: 1em;
 }
@@ -103,10 +111,6 @@ header {
   top: 0;
   left: 0;
   bottom: 0;
-}
-
-h3 {
-  font-size: 1.75em;
 }
 
 body > a {
@@ -138,6 +142,19 @@ a:hover {
   background-color: rgba(134, 45, 149, 0.60);
 }
 
+.mainName {
+  margin: 1em;
+}
+
+.mainHouse {
+  margin: 1em;
+}
+
+.characterHFive {
+  font-size: 1.25em;
+  margin: .25em;
+}
+
 input[type=text] {
   width: 15em;
   height: 2em;
@@ -156,10 +173,4 @@ button {
 
 p {
   margin: 0;
-}
-img {
-  width: 6.5em;
-  height: 6.5em;
-  padding-bottom: 0.25em;
-  margin: 1em;
 }
