@@ -3,6 +3,7 @@ const mustacheExpress = require('mustache-express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const app = express()
+const port = process.env.PORT || 3000
 
 mongoose.connect('mongodb://localhost:27017/HarryPotterCharactersDB')
 mongoose.promise = global.promise
@@ -18,6 +19,4 @@ app.set('view engine', 'mustache')
 require('./routes/character')(app)
 require('./routes/house')(app)
 
-app.listen(3000, () => {
-  console.log('Were listening on 3000')
-})
+app.listen(port)

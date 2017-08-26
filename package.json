@@ -1,9 +1,13 @@
 {
   "private": true,
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "mongoose": "^4.11.7",
     "mustache-express": "^1.2.5"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
