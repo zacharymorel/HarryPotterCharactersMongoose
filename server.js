@@ -8,7 +8,7 @@ const process = require('process')
 const port = process.env.PORT || 3000
 
 //                production               || development
-const MONGO_URI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/HarryPotterCharactersDB'
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/HarryPotterCharactersDB'
 
 mongoose.connect(MONGO_URI)
 mongoose.promise = global.promise
