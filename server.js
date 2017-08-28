@@ -3,9 +3,14 @@ const mustacheExpress = require('mustache-express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const app = express()
+const process = require('process')
+
 const port = process.env.PORT || 3000
 
-mongoose.connect('process.env.MONGOLAB_URI')
+//                production               || development
+const MONGO_URI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/HarryPotterCharactersDB'
+
+mongoose.connect(MONGO_URI)
 mongoose.promise = global.promise
 
 app.use(bodyParser.urlencoded({ extended: true }))
