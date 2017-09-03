@@ -1,5 +1,5 @@
 # HarryPotterCharactersMongoose
-Here we use the Mongoose ORM to create a MongoDB and use CRUD.
+Here we use the Mongoose ODM to create a MongoDB and use CRUD.
 
 I paired with another Node student and this was our first Mongoose Porject. 
 
